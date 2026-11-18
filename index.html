@@ -133,7 +133,7 @@ HTTPS.</li>
 <li><code>og:image:width</code> - The number of pixels wide.</li>
 <li><code>og:image:height</code> - The number of pixels high.</li>
 <li><code>og:image:alt</code> - A description of what is in the image (not a caption). If the page specifies an og:image it should specify <code>og:image:alt</code>.</li>
-<li><code>og:image:color_scheme</code> - The intended interface color scheme for this image. Supported values are <code>light</code> and <code>dark</code>.</li>
+<li><code>og:image:color_scheme</code> - The intended interface color scheme for this image. Supported values are exactly <code>light</code> and <code>dark</code>.</li>
 </ul>
 
 <p>A full image example:</p>
@@ -152,6 +152,8 @@ color scheme is unknown or no image matches, use the first image without a
 valid color-scheme value. If no such image exists, use the first declared
 image. Consumers that ignore this property use the existing array ordering.
 Publishers should put their preferred fallback image first.</p>
+
+<p>For example, declare a default image followed by the light and dark variants.</p>
 
 <pre><code>&lt;meta property="og:image" content="https://example.com/preview.jpg" /&gt;
 &lt;meta property="og:image:alt" content="A map of the city" /&gt;

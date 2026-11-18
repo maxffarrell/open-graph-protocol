@@ -100,8 +100,7 @@ The `og:image` property has some optional structured properties:
  * `og:image:width` - The number of pixels wide.
  * `og:image:height` - The number of pixels high.
  * `og:image:alt` - A description of what is in the image (not a caption). If the page specifies an og:image it should specify `og:image:alt`.
-
- * `og:image:color_scheme` - The intended interface color scheme for this image. Supported values are `light` and `dark`.
+ * `og:image:color_scheme` - The intended interface color scheme for this image. Supported values are exactly `light` and `dark`.
 
 A full image example:
 
@@ -118,6 +117,8 @@ color scheme is unknown or no image matches, use the first image without a
 valid color-scheme value. If no such image exists, use the first declared
 image. Consumers that ignore this property use the existing array ordering.
 Publishers should put their preferred fallback image first.
+
+For example, declare a default image followed by the light and dark variants.
 
     <meta property="og:image" content="https://example.com/preview.jpg" />
     <meta property="og:image:alt" content="A map of the city" />
