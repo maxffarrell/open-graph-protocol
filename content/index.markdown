@@ -101,6 +101,8 @@ The `og:image` property has some optional structured properties:
  * `og:image:height` - The number of pixels high.
  * `og:image:alt` - A description of what is in the image (not a caption). If the page specifies an og:image it should specify `og:image:alt`.
 
+ * `og:image:color_scheme` - The intended interface color scheme for this image. Supported values are `light` and `dark`.
+
 A full image example:
 
     <meta property="og:image" content="http://example.com/ogp.jpg" />
@@ -110,7 +112,23 @@ A full image example:
     <meta property="og:image:height" content="300" />
     <meta property="og:image:alt" content="A shiny red apple with a bite taken out" />
 
-The `og:video` tag has the identical tags as `og:image`. Here is an example:
+Consumers that support color-scheme selection should use the first image
+matching the color scheme of the interface displaying the preview. If that
+color scheme is unknown or no image matches, use the first image without a
+valid color-scheme value. If no such image exists, use the first declared
+image. Consumers that ignore this property use the existing array ordering.
+Publishers should put their preferred fallback image first.
+
+    <meta property="og:image" content="https://example.com/preview.jpg" />
+    <meta property="og:image:alt" content="A map of the city" />
+    <meta property="og:image" content="https://example.com/preview-light.jpg" />
+    <meta property="og:image:color_scheme" content="light" />
+    <meta property="og:image:alt" content="A map of the city" />
+    <meta property="og:image" content="https://example.com/preview-dark.jpg" />
+    <meta property="og:image:color_scheme" content="dark" />
+    <meta property="og:image:alt" content="A map of the city" />
+
+The `og:video` tag supports `secure_url`, `type`, `width`, and `height`. Here is an example:
 
     <meta property="og:video" content="http://example.com/movie.swf" />
     <meta property="og:video:secure_url" content="https://secure.example.com/movie.swf" />

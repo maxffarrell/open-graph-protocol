@@ -70,6 +70,11 @@ og:image a rdf:Property ;
   rdfs:comment "A description of what is in the image."@en-US ;
   rdfs:isDefinedBy og: ;
   rdfs:range ogc:string .
+<http://ogp.me/ns#image:color_scheme> a rdf:Property ;
+  rdfs:label "image color scheme"@en-US ;
+  rdfs:comment "The intended interface color scheme for this image. Supported values are light and dark."@en-US ;
+  rdfs:isDefinedBy og: ;
+  rdfs:range ogc:string .
 og:video a rdf:Property ;
   rdfs:label "video"@en-US ;
   rdfs:comment "A relevant video URL for your object."@en-US ;
